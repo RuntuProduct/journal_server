@@ -1,4 +1,4 @@
-// const site = require('./site')
+const user = require('./user')
 
 const router = (app) => {
   app.all('/api/*', function(req, res, next){
@@ -9,6 +9,8 @@ const router = (app) => {
     res.header("Content-Type", "application/json;charset=utf-8")
     next()
   })
+  
+  app.use('/api/user', user)
 }
 
 module.exports = router
