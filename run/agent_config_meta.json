@@ -1,0 +1,262 @@
+{
+  "keys": "D:\\code\\mine\\journal\\journal_server\\config\\config.default.js",
+  "middleware": "D:\\code\\mine\\journal\\journal_server\\config\\config.default.js",
+  "session": {
+    "maxAge": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-session\\config\\config.default.js",
+    "key": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-session\\config\\config.default.js",
+    "httpOnly": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-session\\config\\config.default.js",
+    "encrypt": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-session\\config\\config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+    "protocolWhiteList": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+    "defaultMiddleware": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+    "csrf": {
+      "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "useSession": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "ignoreJSON": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "cookieName": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "sessionName": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "headerName": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "bodyName": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "queryName": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xframe": {
+      "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "hsts": {
+      "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.local.js",
+      "maxAge": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "includeSubdomains": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "dta": {
+      "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "noopen": {
+      "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "nosniff": {
+      "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xssProtection": {
+      "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "csp": {
+      "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "policy": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js",
+      "checkAddress": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-security\\config\\config.default.js"
+  },
+  "jsonp": {
+    "limit": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "callback": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "csrf": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-jsonp\\config\\config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-onerror\\config\\config.default.js",
+    "appErrorFilter": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-onerror\\config\\config.default.js",
+    "templatePath": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-onerror\\config\\config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-i18n\\config\\config.default.js",
+    "dirs": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-i18n\\config\\config.default.js",
+    "queryField": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieField": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieMaxAge": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-i18n\\config\\config.default.js"
+  },
+  "watcher": {
+    "type": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-watcher\\config\\config.local.js",
+    "eventSources": {
+      "default": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-watcher\\config\\config.default.js",
+      "development": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-watcher\\config\\config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-schedule\\config\\config.default.js",
+      "file": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-schedule\\config\\config.default.js"
+    }
+  },
+  "multipart": {
+    "mode": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "autoFields": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "defaultCharset": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldNameSize": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldSize": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fields": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fileSize": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "files": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fileExtensions": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "whitelist": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "tmpdir": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js",
+    "cleanSchedule": {
+      "cron": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-multipart\\config\\config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-development\\config\\config.default.js",
+    "ignoreDirs": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-development\\config\\config.default.js",
+    "fastReady": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-development\\config\\config.default.js",
+    "reloadOnDebug": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-development\\config\\config.default.js",
+    "overrideDefault": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-development\\config\\config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "hourDelimiter": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "filesRotateBySize": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFileSize": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFiles": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "rotateDuration": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxDays": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-logrotator\\config\\config.default.js"
+  },
+  "static": {
+    "prefix": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-static\\config\\config.default.js",
+    "dir": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-static\\config\\config.default.js",
+    "dynamic": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-static\\config\\config.default.js",
+    "preload": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-static\\config\\config.default.js",
+    "buffer": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-static\\config\\config.default.js",
+    "maxFiles": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-static\\config\\config.default.js"
+  },
+  "view": {
+    "root": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-view\\config\\config.default.js",
+    "cache": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-view\\config\\config.local.js",
+    "defaultExtension": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-view\\config\\config.default.js",
+    "defaultViewEngine": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-view\\config\\config.default.js",
+    "mapping": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg-view\\config\\config.default.js"
+  },
+  "env": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "name": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "proxy": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "protocolHeaders": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "ipHeaders": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "hostHeaders": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "pkg": {
+    "name": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "version": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "description": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "main": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "scripts": {
+      "start": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "dev": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "repository": {
+      "type": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "url": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "author": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "license": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "bugs": {
+      "url": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "homepage": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "dependencies": {
+      "egg": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "mongoose": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "devDependencies": {
+      "egg-bin": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "baseDir": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "HOME": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "rundir": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "dump": {
+    "ignore": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "notFound": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "sitefile": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "middlewares": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "httpClient": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "bodyParser": {
+    "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "formLimit": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "jsonLimit": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "strict": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "queryString": {
+      "arrayLimit": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "depth": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "parameterLimit": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "logger": {
+    "dir": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "env": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "level": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "consoleLevel": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "disableConsoleAfterReady": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "outputJSON": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "buffer": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "appLogName": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "coreLogName": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "agentLogName": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "errorLogName": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "coreLogger": {
+      "consoleLevel": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.local.js"
+    },
+    "allowDebugAtProd": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheLookupInterval": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "request": {
+      "timeout": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketKeepAliveTimeout": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketKeepAliveTimeout": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "logging": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "coreMiddleware": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "workerStartTimeout": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "port": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+      "hostname": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js",
+    "responseTimeout": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+  },
+  "onClientError": "D:\\code\\mine\\journal\\journal_server\\node_modules\\egg\\config\\config.default.js"
+}
