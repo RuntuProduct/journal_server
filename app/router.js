@@ -1,6 +1,7 @@
 module.exports = app => {
   const { router, controller } = app
+  const baseURL = '/api'
 
-  router.get('/user', controller.user.index)
-  router.post('/user', controller.user.login)
+  router.get(`${baseURL}/user`, controller.user.index)
+  router.post(`${baseURL}/user`, controller.user.login)
 }

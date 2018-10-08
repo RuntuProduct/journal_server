@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "egg-bin dev"
+    "dev": "egg-bin dev --port 3002"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/RuntuProduct/journal_server#readme",
   "dependencies": {
     "egg": "^2.10.0",
+    "egg-cors": "^2.1.1",
     "mongoose": "^5.3.2"
   },
   "devDependencies": {
