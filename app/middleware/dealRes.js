@@ -5,11 +5,12 @@ module.exports = () => {
    * @param {number} code 返回码。不传值和传200时返回正确，其余为返回错误
    * @param {any} data 返回体内容
    */
-  const dealRes = async (ctx, next) => {
+  return async function dealRes(ctx, next) {
     await next()
 
     const code = ctx.status || 200
-    const data = ctx.body
+    const data = ctx.response.body || ctx.body
+    console.log(code, data)
 
     if (code !== 200) {
       ctx.body = {
@@ -26,5 +27,4 @@ module.exports = () => {
     }
     ctx.status = code
   }
-  return dealRes
 }

@@ -10,20 +10,21 @@ class UserController extends Controller {
     const { userId } = request.query
     if (!userId || userId === '') {
       ctx.body = 'userId is require'
-      ctx.status = 204
+      ctx.status = 202
       return
     }
-    const data = await User.findById(userId).exec()
-      .catch(e => {
-        logger.error(e.message)
-        ctx.body = e.message
-        ctx.status = 300
-      })
-    if (!data) {
-      ctx.body = 'user not exist'
-      ctx.status = 204
-    } else {
-      ctx.body = data
+    try {
+      const data = await User.findById(userId).exec()
+      if (!data) {
+        ctx.body = 'user not exist'
+        ctx.status = 204
+      } else {
+        ctx.body = data
+      }
+    } catch(e) {
+      logger.error(e.message)
+      ctx.body = e.message
+      ctx.status = 500
     }
   }
 
@@ -39,7 +40,7 @@ class UserController extends Controller {
     } catch(e) {
       logger.error(e.message)
       ctx.body = e.message
-      ctx.status = 300
+      ctx.status = 500
     }
   }
 }
