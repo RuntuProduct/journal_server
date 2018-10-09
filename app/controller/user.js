@@ -5,12 +5,11 @@ class UserController extends Controller {
   /** 获取用户详情 */
   async index() {
     const { ctx, logger } = this
-    const { request } = ctx
 
-    const { userId } = request.query
+    const userId = ctx.cookies.get('userId')
     if (!userId || userId === '') {
-      ctx.body = 'userId is require'
-      ctx.status = 202
+      ctx.body = 'user not login yet'
+      ctx.status = 204
       return
     }
     try {
@@ -41,15 +40,27 @@ class UserController extends Controller {
       targetTime.setTime(now.getTime() + 1800000)
       ctx.cookies.set('userId', data[0]['_id'], {
         // expires: targetTime,
-        httpOnly: false,
+        // httpOnly: false,
         maxAge: 300 * 60 * 1000,
       })
+      // 调用 rotateCsrfSecret 刷新用户的 CSRF token
+      ctx.rotateCsrfSecret()
       ctx.body = data[0]
     } catch(e) {
       logger.error(e.message)
       ctx.body = e.message
       ctx.status = 500
     }
+  }
+
+  /** 退出登录 */
+  async logout() {
+    const { ctx } = this
+
+    ctx.cookies.set('userId', '', {
+      maxAge: 0,
+    })
+    ctx.body = 'logout success'
   }
 }
 
