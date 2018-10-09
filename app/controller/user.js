@@ -36,6 +36,14 @@ class UserController extends Controller {
     const { account, password  } = request.body
     try {
       const data = await User.find({ account, password }, ['username'])
+      const now = new Date()
+      const targetTime = new Date()
+      targetTime.setTime(now.getTime() + 1800000)
+      ctx.cookies.set('userId', data[0]['_id'], {
+        // expires: targetTime,
+        httpOnly: false,
+        maxAge: 300 * 60 * 1000,
+      })
       ctx.body = data[0]
     } catch(e) {
       logger.error(e.message)
