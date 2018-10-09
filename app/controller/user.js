@@ -13,7 +13,7 @@ class UserController extends Controller {
       return
     }
     try {
-      const data = await User.findById(userId).exec()
+      const data = await User.findById(userId, ['username']).exec()
       if (!data) {
         ctx.body = 'user not exist'
         ctx.status = 204
