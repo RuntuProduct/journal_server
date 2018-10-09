@@ -10,7 +10,6 @@ module.exports = () => {
 
     const code = ctx.status || 200
     const data = ctx.response.body || ctx.body
-    console.log(code, data)
 
     if (code !== 200) {
       ctx.body = {
