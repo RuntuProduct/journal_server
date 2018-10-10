@@ -5,4 +5,7 @@ module.exports = app => {
   router.post(`${baseURL}/login`, controller.user.login)  // 登录
   router.post(`${baseURL}/logout`, controller.user.logout) // 退出登录
   router.get(`${baseURL}/user`, controller.user.index) // 获取用户信息
+
+  // 任务相关
+  router.post(`${baseURL}/task`, controller.task.create) // 创建任务
 }
