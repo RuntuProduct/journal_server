@@ -1,10 +1,5 @@
 module.exports = () => {
-  /**
-   * 返回体统一处理
-   * @param {any} res res对象 
-   * @param {number} code 返回码。不传值和传200时返回正确，其余为返回错误
-   * @param {any} data 返回体内容
-   */
+  /** 返回体统一处理 */
   return async function dealRes(ctx, next) {
     await next()
 
