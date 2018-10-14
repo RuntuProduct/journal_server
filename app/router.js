@@ -7,5 +7,6 @@ module.exports = app => {
   router.get(`${baseURL}/user`, controller.user.index) // 获取用户信息
 
   // 任务相关
+  router.get(`${baseURL}/task`, controller.task.list) // 获取全量列表
   router.post(`${baseURL}/task`, controller.task.create) // 创建任务
 }

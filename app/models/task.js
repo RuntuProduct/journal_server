@@ -8,7 +8,6 @@ const TaskSchema = new Schema({
   }, // 待办标题
   desc: {
     type: String,
-    required: true,
   }, // 待办描述
   userId: {
     type: Schema.Types.ObjectId,
@@ -26,6 +25,10 @@ const TaskSchema = new Schema({
   updateDate: {
     type: Date,
   }, // 修改日期
+  completed: {
+    type: Boolean,
+    default: false,
+  },
 }, { collection: 'task' })
 
 module.exports = mongoose.model('Task', TaskSchema)
