@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 const BookMonthSchema = new Schema({
   month: {
     type: Number,
+    min: 0, max: 11,
     required: true,
   }, // 月份
   userId: {
