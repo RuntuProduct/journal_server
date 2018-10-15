@@ -1,5 +1,4 @@
 const Controller = require('egg').Controller
-const Task = require('../models/task')
 
 class TaskController extends Controller {
   /** 创建任务 */
@@ -11,7 +10,7 @@ class TaskController extends Controller {
       const baseValue = request.body
       const createDate = new Date()
       const userId = ctx.cookies.get('userId')
-      const data = await Task.create({
+      const data = await this.app.mysql.insert('task', {
         ...baseValue,
         userId,
         createDate,
@@ -28,22 +27,22 @@ class TaskController extends Controller {
   async list() {
     try {
       const userId = this.ctx.cookies.get('userId')
-      const dayList = await Task.find({
+      const dayList = await this.app.mysql.select('task', {
         userId: userId,
         type: 'day',
-      }).lean().exec()
-      const weekList = await Task.find({
+      })
+      const weekList = await this.app.mysql.select('task', {
         userId: userId,
         type: 'week',
-      }).lean().exec()
-      const monthList = await Task.find({
+      })
+      const monthList = await this.app.mysql.select('task', {
         userId: userId,
         type: 'month',
-      }).lean().exec()
-      const yearList = await Task.find({
+      })
+      const yearList = await this.app.mysql.select('task', {
         userId: userId,
         type: 'year',
-      }).lean().exec()
+      })
       // console.log(baseList)
       this.ctx.body = {
         dayList,
@@ -59,7 +58,7 @@ class TaskController extends Controller {
   }
 
   async update() {
-    const _id = this.ctx.params._id
+    const id = this.ctx.params.id
     const data = this.ctx.request.body
     try {
       const newData = {
@@ -68,11 +67,11 @@ class TaskController extends Controller {
         completed: data.completed,
       }
       const updateDate = new Date()
-      const res = await Task.update({
-        _id,
-      }, {
+      const res = await this.app.mysql.update('task', {
         ...newData,
         updateDate,
+      }, {
+        where: { id },
       })
     } catch(e) {
       this.ctx.logger.error(e.message)

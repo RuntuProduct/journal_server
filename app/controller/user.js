@@ -1,5 +1,4 @@
 const Controller = require('egg').Controller
-const User = require('../models/user')
 
 class UserController extends Controller {
   /** 获取用户详情 */
@@ -13,7 +12,11 @@ class UserController extends Controller {
       return
     }
     try {
-      const data = await User.findById(userId, ['username']).exec()
+      const data = await this.app.mysql.get(
+        'user',
+        { id: userId },
+        ['username'],
+      )
       if (!data) {
         ctx.body = 'user not exist'
         ctx.status = 204
@@ -34,18 +37,23 @@ class UserController extends Controller {
 
     const { account, password  } = request.body
     try {
-      const data = await User.find({ account, password }, ['username'])
+      const data = await this.app.mysql.get(
+        'user',
+        { account, password },
+        ['username'],
+        )
       const now = new Date()
       const targetTime = new Date()
+      console.log(data)
       targetTime.setTime(now.getTime() + 1800000)
-      ctx.cookies.set('userId', data[0]['_id'], {
+      ctx.cookies.set('userId', data['id'], {
         // expires: targetTime,
         // httpOnly: false,
         maxAge: 300 * 60 * 1000,
       })
       // 调用 rotateCsrfSecret 刷新用户的 CSRF token
       ctx.rotateCsrfSecret()
-      ctx.body = data[0]
+      ctx.body = data
     } catch(e) {
       logger.error(e.message)
       ctx.body = e.message

@@ -5,10 +5,10 @@ class BookMonthService extends Service {
   /** 根据年Id获取月数组 */
   async getByYearId(yearId) {
     const userId = this.ctx.cookies.get('userId')
-    const monthArr = await BookMonth.find({
+    const monthArr = await this.app.mysql.get('book_month', {
       yearId,
       userId,
-    }).lean().exec()
+    })
     return monthArr
   }
 }

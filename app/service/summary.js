@@ -5,7 +5,7 @@ class SummaryService extends Service {
   async getYear(year) {
     const yearData = await this.ctx.service.bookYear.getSingle(year)
     // 根据年数据获取月数据
-    const monthId = yearData._id
+    const monthId = yearData.id
     const monArr = await this.ctx.service.bookMonth.getByYearId(monthId)
     return {
       ...yearData,
