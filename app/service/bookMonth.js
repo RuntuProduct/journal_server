@@ -1,5 +1,4 @@
 const Service = require('egg').Service
-const BookMonth = require('../models/bookMonth')
 
 class BookMonthService extends Service {
   /** 根据年Id获取月数组 */
