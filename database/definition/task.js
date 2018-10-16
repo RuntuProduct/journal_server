@@ -26,7 +26,7 @@ module.exports = {
   },
   target_id: {
     type: BIGINT,
-    allowNull: falsse,
+    allowNull: false,
   },
   completed: {
     type: ENUM('Y', 'N'),
