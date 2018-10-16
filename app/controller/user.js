@@ -14,7 +14,7 @@ class UserController extends Controller {
     try {
       const data = await ctx.model.User.findById(
         userId,
-        { attributes: ['username'] },
+        { attributes: ['id', 'username'] },
       )
       if (!data) {
         ctx.body = 'user not exist'
@@ -36,9 +36,9 @@ class UserController extends Controller {
 
     const { account, password  } = request.body
     try {
-      const data = await ctx.model.User.find({
+      const data = await ctx.model.User.findOne({
         where: { account, password },
-        attributes: ['username'],
+        attributes: ['id', 'username'],
       })
       const now = new Date()
       const targetTime = new Date()
