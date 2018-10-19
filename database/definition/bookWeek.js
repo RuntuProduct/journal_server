@@ -1,8 +1,8 @@
 'use strict';
+const base = require('./base')
+const { BIGINT, DATEONLY, TEXT } = require('Sequelize');
 
-const { BIGINT, DATEONLY, TEXT, DATE } = require('Sequelize');
-
-module.exports = {
+exports.DB = {
   id: {
     type: BIGINT,
     primaryKey: true,
@@ -23,12 +23,5 @@ module.exports = {
   note: {
     type: TEXT,
   },
-  gmt_create: {
-    type: DATE,
-    allowNull: false,
-  },
-  gmt_modified: {
-    type: DATE,
-    allowNull: false,
-  },
+  ...base,
 }

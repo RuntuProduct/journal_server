@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "egg-bin dev --port 3002"
+    "dev": "egg-bin dev --port 3002",
+    "db:init": "sequelize db:migrate && sequelize db:seed:all",
+    "db:undo": "sequelize db:seed:undo:all && sequelize db:migrate:undo"
   },
   "repository": {
     "type": "git",

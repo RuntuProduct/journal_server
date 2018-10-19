@@ -1,8 +1,8 @@
 'use strict';
+const base = require('./base');
+const { BIGINT, STRING } = require('Sequelize');
 
-const { BIGINT, STRING, DATE } = require('Sequelize');
-
-module.exports = {
+exports.DB = {
   id: {
     type: BIGINT,
     primaryKey: true,
@@ -17,12 +17,15 @@ module.exports = {
     allowNull: false,
   },
   username: STRING(30),
-  gmt_create: {
-    type: DATE,
-    allowNull: false,
-  },
-  gmt_modified: {
-    type: DATE,
-    allowNull: false,
-  },
+  ...base,
 }
+
+exports.SEED = [
+  {
+    account: 'admin',
+    password: '123456',
+    username: 'runtu',
+    create_at: new Date(),
+    update_at: new Date(),
+  },
+]

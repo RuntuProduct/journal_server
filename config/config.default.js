@@ -32,6 +32,8 @@ module.exports = {
     port: 3306,
     database: 'journal_db',
     define: {
+      timestamps: true,
+      paranoid: true,
       underscored: true,
       freezeTableName: true,
     },
