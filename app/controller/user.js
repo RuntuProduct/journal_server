@@ -8,17 +8,18 @@ class UserController extends Controller {
     const userId = ctx.cookies.get('userId')
     if (!userId || userId === '') {
       ctx.body = 'user not login yet'
-      ctx.status = 204
+      ctx.status = 401
       return
     }
     try {
       const data = await ctx.model.User.findById(
         userId,
-        { attributes: ['id', 'username'] },
+        { attributes: {exclude: ['account', 'password']} },
       )
+      console.log(data)
       if (!data) {
         ctx.body = 'user not exist'
-        ctx.status = 204
+        ctx.status = 401
       } else {
         ctx.body = data
       }
@@ -38,7 +39,7 @@ class UserController extends Controller {
     try {
       const data = await ctx.model.User.findOne({
         where: { account, password },
-        attributes: ['id', 'username'],
+        attributes: {exclude: ['account', 'password']},
       })
       const now = new Date()
       const targetTime = new Date()

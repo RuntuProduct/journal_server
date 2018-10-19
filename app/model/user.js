@@ -1,9 +1,4 @@
 'use strict';
+const USER = require('../../database/definition/user');
 
-const db_user = require('../../database/definition/user');
-
-module.exports = app => {
-  const User = app.model.define('user', db_user);
-
-  return User;
-};
+module.exports = app => app.model.define('user', USER.DB);

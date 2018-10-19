@@ -27,21 +27,29 @@ class TaskController extends Controller {
   async list() {
     try {
       const userId = this.ctx.cookies.get('userId')
-      const dayList = await this.app.mysql.select('task', {
-        userId: userId,
-        type: 'day',
+      const dayList = await this.ctx.model.Task.findAll({
+        where: {
+          user_id: userId,
+          t_type: 'day',
+        }
       })
-      const weekList = await this.app.mysql.select('task', {
-        userId: userId,
-        type: 'week',
+      const weekList = await this.ctx.model.Task.findAll({
+        where: {
+          user_id: userId,
+          t_type: 'week',
+        }
       })
-      const monthList = await this.app.mysql.select('task', {
-        userId: userId,
-        type: 'month',
+      const monthList = await this.ctx.model.Task.findAll({
+        where: {
+          user_id: userId,
+          t_type: 'month',
+        }
       })
-      const yearList = await this.app.mysql.select('task', {
-        userId: userId,
-        type: 'year',
+      const yearList = await this.ctx.model.Task.findAll({
+        where: {
+          user_id: userId,
+          t_type: 'year',
+        }
       })
       // console.log(baseList)
       this.ctx.body = {
