@@ -25,7 +25,7 @@ exports.SEED = [
     account: 'admin',
     password: '123456',
     username: 'runtu',
-    create_at: new Date(),
-    update_at: new Date(),
+    created_at: new Date(),
+    updated_at: new Date(),
   },
 ]

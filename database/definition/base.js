@@ -2,15 +2,15 @@
 const { DATE, NOW } = require('Sequelize');
 
 module.exports = {
-  create_at: {
+  created_at: {
     type: DATE,
     defaultValue: NOW,
   },
-  update_at: {
+  updated_at: {
     type: DATE,
     defaultValue: NOW,
   },
-  delete_at: {
+  deleted_at: {
     type: DATE,
   },
 }
