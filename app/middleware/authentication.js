@@ -1,7 +1,7 @@
 module.exports = () => {
   /** 检查用户登录态 */
   return async function authentication(ctx, next) {
-    const userId = ctx.cookies.get('userId')
+    const userId = ctx.service.utils.getUserId()
     ctx.logger.info(`userId: ${userId}`)
     if (!userId || userId === '') {
       ctx.body = {

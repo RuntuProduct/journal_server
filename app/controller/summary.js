@@ -30,8 +30,7 @@ class SummaryController extends Controller {
     }
     // this.ctx.body = year
     const bookYear = await this.ctx.service.summary.getYear(year)
-    // this.ctx.body = bookYear
-    throw new Error('sss')
+    this.ctx.body = bookYear
   }
 }
 

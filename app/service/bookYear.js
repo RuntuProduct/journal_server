@@ -3,18 +3,12 @@ const Service = require('egg').Service
 class BookYearService extends Service {
   /** 获取某年数据 */
   async getSingle(year) {
-    const userId = this.ctx.cookies.get('userId')
-    let target = await this.app.mysql.get('book_year', {
-      userId,
-      year,
+    const user_id = this.ctx.cookies.get('userId')
+    const target = await this.ctx.model.BookYear.findOrCreate({
+      where: { user_id, year },
+    }).spread((data, created) => {
+      return data.get()
     })
-    if (!target || !target.length) {
-      // 如无该年数据，新增之
-      target = await this.app.mysql.insert('book_year', {
-        year,
-        userId,
-      })
-    }
     return target
   }
 }
