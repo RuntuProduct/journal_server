@@ -4,7 +4,7 @@ const { Op } = require('sequelize')
 class BookMonthService extends Service {
   /** 根据年Id获取月数组 */
   async getByYearId(year_id) {
-    const user_id = this.ctx.cookies.get('userId')
+    const user_id = await this.ctx.service.utils.getUserId()
     const res = []
     const queryQueue = []
     for (let i = 0; i < 12; i += 1) {

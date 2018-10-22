@@ -9,7 +9,7 @@ class TaskController extends Controller {
     try {
       const baseValue = request.body
       const createDate = new Date()
-      const userId = ctx.cookies.get('userId')
+      const userId = await ctx.service.utils.getUserId()
       const data = await this.app.mysql.insert('task', {
         ...baseValue,
         userId,
@@ -26,7 +26,7 @@ class TaskController extends Controller {
   /** 获取全量任务列表 */
   async list() {
     try {
-      const userId = this.ctx.cookies.get('userId')
+      const userId = await this.ctx.service.utils.getUserId()
       const dayList = await this.ctx.model.Task.findAll({
         where: {
           user_id: userId,

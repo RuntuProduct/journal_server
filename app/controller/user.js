@@ -5,7 +5,7 @@ class UserController extends Controller {
   async index() {
     const { ctx, logger } = this
 
-    const userId = ctx.service.utils.getUserId()
+    const userId = await ctx.service.utils.getUserId()
     if (!userId || userId === '') {
       ctx.body = 'user not login yet'
       ctx.status = 401
