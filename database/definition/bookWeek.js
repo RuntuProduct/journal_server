@@ -1,23 +1,25 @@
 'use strict';
 const base = require('./base')
-const { BIGINT, DATEONLY, TEXT } = require('Sequelize');
+const { UUID, UUIDV4, DATEONLY, TEXT } = require('Sequelize');
 
 exports.DB = {
   id: {
-    type: BIGINT,
+    type: UUID,
     primaryKey: true,
-    autoIncrement: true,
+    unique: true,
+    allowNull: false,
+    defaultValue: UUIDV4,
   },
   day: {
     type: DATEONLY,
     allowNull: false,
   },
   user_id: {
-    type: BIGINT,
+    type: UUID,
     allowNull: false,
   },
   year_id: {
-    type: BIGINT,
+    type: UUID,
     allowNull: false,
   },
   note: {

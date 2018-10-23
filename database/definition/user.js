@@ -1,12 +1,14 @@
 'use strict';
 const base = require('./base');
-const { BIGINT, STRING } = require('Sequelize');
+const { UUID, UUIDV4, STRING } = require('Sequelize');
 
 exports.DB = {
   id: {
-    type: BIGINT,
+    type: UUID,
     primaryKey: true,
-    autoIncrement: true,
+    unique: true,
+    allowNull: false,
+    defaultValue: UUIDV4,
   },
   account: {
     type: STRING(30),
@@ -20,12 +22,10 @@ exports.DB = {
   ...base,
 }
 
-exports.SEED = [
-  {
-    account: 'admin',
-    password: '123456',
-    username: 'runtu',
-    created_at: new Date(),
-    updated_at: new Date(),
-  },
-]
+// exports.SEED = [
+//   {
+//     account: 'admin',
+//     password: '123456',
+//     username: 'runtu',
+//   },
+// ]

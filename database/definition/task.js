@@ -1,12 +1,14 @@
 'use strict';
 const base = require('./base')
-const { BIGINT, STRING, TEXT, ENUM } = require('Sequelize');
+const { UUID, UUIDV4, STRING, TEXT, ENUM } = require('Sequelize');
 
 exports.DB = {
   id: {
-    type: BIGINT,
+    type: UUID,
     primaryKey: true,
-    autoIncrement: true,
+    unique: true,
+    allowNull: false,
+    defaultValue: UUIDV4,
   },
   title: {
     type: STRING(40),
@@ -16,7 +18,7 @@ exports.DB = {
     type: TEXT,
   },
   user_id: {
-    type: BIGINT,
+    type: UUID,
     allowNull: false,
   },
   t_type: {
@@ -25,7 +27,7 @@ exports.DB = {
     defaultValue: 'day',
   },
   target_id: {
-    type: BIGINT,
+    type: UUID,
     allowNull: false,
   },
   completed: {
