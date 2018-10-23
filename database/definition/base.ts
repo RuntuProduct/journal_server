@@ -1,7 +1,7 @@
 'use strict';
-const { DATE, NOW } = require('Sequelize');
+import { DATE, NOW } from 'sequelize';
 
-module.exports = {
+export default {
   created_at: {
     type: DATE,
     allowNull: false,
@@ -15,4 +15,4 @@ module.exports = {
   deleted_at: {
     type: DATE,
   },
-}
+};

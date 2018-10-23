@@ -1,8 +1,8 @@
 'use strict';
-const base = require('./base')
-const { UUID, UUIDV4, DATEONLY, TEXT } = require('Sequelize');
+import { INTEGER, TEXT, UUID, UUIDV4 } from 'sequelize';
+import base from './base';
 
-exports.DB = {
+export const DB = {
   id: {
     type: UUID,
     primaryKey: true,
@@ -10,19 +10,11 @@ exports.DB = {
     allowNull: false,
     defaultValue: UUIDV4,
   },
-  day: {
-    type: DATEONLY,
+  year: {
+    type: INTEGER(4),
     allowNull: false,
   },
   user_id: {
-    type: UUID,
-    allowNull: false,
-  },
-  year_id: {
-    type: UUID,
-    allowNull: false,
-  },
-  month_id: {
     type: UUID,
     allowNull: false,
   },
@@ -30,4 +22,4 @@ exports.DB = {
     type: TEXT,
   },
   ...base,
-}
+};

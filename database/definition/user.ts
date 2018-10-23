@@ -1,8 +1,8 @@
 'use strict';
-const base = require('./base');
-const { UUID, UUIDV4, STRING } = require('Sequelize');
+import { STRING, UUID, UUIDV4 } from 'sequelize';
+import base from './base';
 
-exports.DB = {
+export const DB = {
   id: {
     type: UUID,
     primaryKey: true,
@@ -20,7 +20,7 @@ exports.DB = {
   },
   username: STRING(30),
   ...base,
-}
+};
 
 // exports.SEED = [
 //   {
