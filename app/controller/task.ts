@@ -64,15 +64,15 @@ export default class TaskController extends Controller {
   }
 
   public async update() {
-    const id = this.ctx.params.id;
-    const data = this.ctx.request.body;
+    // const id = this.ctx.params.id;
+    // const data = this.ctx.request.body;
     try {
-      const newData = {
-        title: data.title,
-        desc: data.desc,
-        completed: data.completed,
-      };
-      const updateDate = new Date();
+      // const newData = {
+      //   title: data.title,
+      //   desc: data.desc,
+      //   completed: data.completed,
+      // };
+      // const updateDate = new Date();
       // const res = await this.app.mysql.update('task', {
       //   ...newData,
       //   updateDate,

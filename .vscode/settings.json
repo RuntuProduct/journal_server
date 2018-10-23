@@ -1,10 +1,10 @@
 {
   "files.exclude": {
     "USE_GITIGNORE": false,
-    // "**/*.js": {
-    //   "when": "$(basename).ts"
-    // },
-    "**/*.js": false,
+    "**/*.js": {
+      "when": "$(basename).ts"
+    },
+    // "**/*.js": false,
     "**/*.map": true,
     "run": true,
     "logs": true,

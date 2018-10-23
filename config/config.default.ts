@@ -25,7 +25,10 @@ export class DefaultConfig {
   readonly ports = 3002;
 
   readonly onerror = {
-    errorPageUrl: (err: Error, ctx: Context) => ctx.errorPageUrl || '/500',
+    errorPageUrl: (err: Error, ctx: Context) => {
+      ctx.logger.error(err.message);
+      return ctx.errorPageUrl || '/500';
+    },
     accepts,
     all,
   };

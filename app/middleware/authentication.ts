@@ -3,7 +3,7 @@ import { Context } from 'egg';
 module.exports = () => {
   /** 检查用户登录态 */
   return async function authentication(ctx: Context, next: () => void) {
-    const userId = ctx.service.utils.getUserId();
+    const userId = await ctx.service.utils.getUserId();
     ctx.logger.info(`userId: ${userId}`);
     if (!userId || userId === '') {
       ctx.body = {

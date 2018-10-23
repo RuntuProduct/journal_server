@@ -9,6 +9,7 @@ import SummaryController from './app/controller/summary';
 import UserModel from './app/model/user';
 import TaskModel from './app/model/task';
 import BookMonthModel from './app/model/bookMonth';
+import BookYearModel from './app/model/bookYear';
 
 // Service
 import UtilsService from './app/service/utils';
@@ -35,6 +36,7 @@ declare module 'egg' {
       User: Model<UserModel, {}>;
       Task: Model<TaskModel, {}>;
       BookMonth: Model<BookMonthModel, {}>;
+      BookYear: Model<BookYearModel, {}>;
     }
   }
 
