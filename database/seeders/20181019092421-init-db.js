@@ -1,9 +1,8 @@
 'use strict';
-
 const USER = require('../definition/user')
 
 module.exports = {
-  up: async (queryInterface, Sequelize, done) => {
+  up: async (queryInterface, Sequelize1, done) => {
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
@@ -14,7 +13,7 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-    await queryInterface.bulkInsert('user', USER.SEED);
+    // await queryInterface.bulkInsert('user', USER_SEED);
     done();
   },
 
@@ -26,7 +25,7 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */
-    await queryInterface.bulkDelete('user', null, {});
+    // await queryInterface.bulkDelete('user', null, {});
     done();
   }
 };
