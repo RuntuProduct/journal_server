@@ -65,4 +65,32 @@ export default class UserController extends Controller {
     });
     this.ctx.body = 'logout success';
   }
+
+  /** 用户注册 */
+  public async signup() {
+    const {
+      username = `用户-${Date.parse((new Date()).toLocaleDateString())}`,
+      account,
+      password,
+    } = this.ctx.request.body;
+    if (!account) {
+      throw new Error(`account is need, but got ${account}`);
+    } else if (!password) {
+      throw new Error(`password is need, but got ${password}`);
+    }
+    // check account if used
+    const oldData = await this.ctx.model.User.findOne({
+      where: { account },
+    });
+    if (oldData) {
+      throw new Error(`account: ${account} had exist`);
+    }
+    // insert user data
+    await this.ctx.model.User.create({
+      account,
+      password,
+      username,
+    });
+    this.ctx.body = 'signup success';
+  }
 }

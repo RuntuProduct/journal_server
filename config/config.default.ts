@@ -64,10 +64,10 @@ export class DefaultConfig {
   };
 
   // 配置需要的中间件，数组顺序即为中间件的加载顺序
-  readonly middleware: [ 'authentication', 'dealRes' ];
+  readonly middleware = [ 'authentication', 'dealRes' ];
 
   readonly authentication = {
-    ignore : /^\/api\/login/,
+    ignore : /^\/api\/(login|signup)/,
   };
 }
 

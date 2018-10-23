@@ -7,6 +7,7 @@ export default (app: Application) => {
 
   router.post(`${baseURL}/login`, controller.user.login);  // 登录
   router.post(`${baseURL}/logout`, controller.user.logout); // 退出登录
+  router.post(`${baseURL}/signup`, controller.user.signup); // 注册
   router.get(`${baseURL}/user`, controller.user.index); // 获取用户信息
 
   // 任务相关
