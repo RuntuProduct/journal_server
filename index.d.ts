@@ -8,6 +8,8 @@ import SummaryController from './app/controller/summary';
 // Model
 import UserModel from './app/model/user';
 import TaskModel from './app/model/task';
+import BookDayModel from './app/model/bookDay';
+import BookWeekModel from './app/model/bookWeek';
 import BookMonthModel from './app/model/bookMonth';
 import BookYearModel from './app/model/bookYear';
 
@@ -15,6 +17,7 @@ import BookYearModel from './app/model/bookYear';
 import UtilsService from './app/service/utils';
 import TaskService from './app/service/task';
 import SummaryService from './app/service/summary';
+import BookService from './app/service/book';
 import BookMonthService from './app/service/bookMonth';
 import BookYearService from './app/service/bookyear';
 
@@ -35,6 +38,8 @@ declare module 'egg' {
     model: {
       User: Model<UserModel, {}>;
       Task: Model<TaskModel, {}>;
+      BookDay: Model<BookDayModel, {}>;
+      BookWeek: Model<BookWeekModel, {}>;
       BookMonth: Model<BookMonthModel, {}>;
       BookYear: Model<BookYearModel, {}>;
     }
@@ -44,6 +49,7 @@ declare module 'egg' {
     utils: UtilsService;
     task: TaskService;
     summary: SummaryService;
+    book: BookService;
     bookMonth: BookMonthService;
     bookYear: BookYearService;
   }
