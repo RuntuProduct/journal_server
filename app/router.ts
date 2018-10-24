@@ -13,6 +13,7 @@ export default (app: Application) => {
   // 任务相关
   router.get(`${baseURL}/task`, controller.task.list); // 获取全量列表
   router.post(`${baseURL}/task`, controller.task.create); // 创建任务
+  router.post(`${baseURL}/task/complete`, controller.task.completed); // 完成任务（或取消完成）
 
   // 汇总相关
   router.get(`${baseURL}/summary/year`, controller.summary.year); // 获取年汇总

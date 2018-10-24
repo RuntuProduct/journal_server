@@ -51,6 +51,20 @@ export default class TaskController extends Controller {
 
   /** 完成任务 */
   public async completed() {
-    //
+    const { id, completed } = this.ctx.request.body;
+    if (!id) {
+      throw new Error(`task id is required, but got ${id}`);
+    } else if (!(completed === 'Y' || completed === 'N')) {
+      throw new Error(`completed field ${completed} is invalid`);
+    }
+    const userId = await this.ctx.service.utils.getUserId();
+    const targetValue = await this.ctx.model.Task.findById(id);
+    if (targetValue.user_id !== userId) {
+      throw new Error('this task is not belong to you');
+    }
+    await this.ctx.model.Task.update({
+      ...targetValue, completed,
+    }, { where: { id } });
+    this.ctx.body = 'update success';
   }
 }
