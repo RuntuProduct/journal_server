@@ -4,15 +4,19 @@ export default class TaskController extends Controller {
   /** 创建任务 */
   public async create() {
     try {
-      const baseValue = this.ctx.request.body;
-      const createDate = new Date();
-      const userId = await this.ctx.service.utils.getUserId();
-      // const data = await this.app.mysql.insert('task', {
-      //   ...baseValue,
-      //   userId,
-      //   createDate,
-      // })
-      const data = { baseValue, createDate, userId };
+      const {
+        title,
+        description,
+        t_type,
+        target_id,
+        now,
+      } = this.ctx.request.body;
+      const data = await this.ctx.service.task.create({
+        title,
+        description,
+        t_type,
+        target_id,
+      }, now);
       this.ctx.body = data;
     } catch (e) {
       this.logger.error(e.message);

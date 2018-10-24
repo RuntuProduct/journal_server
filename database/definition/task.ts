@@ -33,7 +33,7 @@ export const DB = {
   completed: {
     type: ENUM('Y', 'N'),
     allowNull: false,
-    defaultValue: 'Y',
+    defaultValue: 'N',
   },
   ...base,
 };
