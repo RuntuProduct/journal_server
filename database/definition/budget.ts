@@ -13,12 +13,20 @@ export const DB = {
     type: UUID,
     allowNull: false,
   },
-  total: {
+  outlay: {
     type: INTEGER,
     allowNull: false,
     defaultValue: 0,
-  }, // 总量
-  tags: {
+  }, // 支出
+  income: {
+    type: INTEGER,
+    allowNull: false,
+    defaultValue: 0,
+  }, // 收入
+  tags_outlay: {
+    type: CHAR,
+  }, // 标签类（'1,2,3')
+  tags_income: {
     type: CHAR,
   }, // 标签类（'1,2,3')
   ...base,
