@@ -67,7 +67,7 @@ export class DefaultConfig {
   readonly middleware = [ 'authentication', 'dealRes' ];
 
   readonly authentication = {
-    ignore : /^\/api\/(login|signup)/,
+    ignore : /^\/api\/(login|signup|user)/,
   };
 }
 
