@@ -21,5 +21,9 @@ export const DB = {
   note: {
     type: TEXT,
   },
+  budget_id: {
+    type: UUID,
+    allowNull: false,
+  },
   ...base,
 };
