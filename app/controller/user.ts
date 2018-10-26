@@ -40,6 +40,11 @@ export default class UserController extends Controller {
       const targetTime = new Date();
       if (data) {
         targetTime.setTime(now.getTime() + 1800000);
+        // clean old cookies
+        this.ctx.cookies.set('userId', '', {
+          maxAge: 0,
+        });
+        // set new cookies
         this.ctx.cookies.set('userId', data.id, {
           // expires: targetTime,
           // httpOnly: false,
