@@ -20,10 +20,15 @@ export default class BookService extends Service {
     const yearData = await this.ctx.model.BookYear.findOrCreate({
       where: { year: yearValue, user_id: userId },
     }).spread((v) => v);
+    // init year budget
+    const yearId = yearData.id;
+    const yearBudgetData = await this.ctx.model.Budget.findOrCreate({
+      where: { year_id: yearId },
+    }).spread((v) => v);
+    yearData.budget = yearBudgetData;
 
     // init month data
     const monthValue = day.month() + 1;
-    const yearId = yearData.id;
     const monthData = await this.ctx.model.BookMonth.findOrCreate({
       where: { month: monthValue, user_id: userId, year_id: yearId },
     }).spread((v) => v);
