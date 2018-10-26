@@ -12,6 +12,8 @@ import BookDayModel from './app/model/bookDay';
 import BookWeekModel from './app/model/bookWeek';
 import BookMonthModel from './app/model/bookMonth';
 import BookYearModel from './app/model/bookYear';
+import BudgetModel from './app/model/budget';
+import BudgetTagModel from './app/model/budgetTag';
 
 // Service
 import UtilsService from './app/service/utils';
@@ -42,6 +44,8 @@ declare module 'egg' {
       BookWeek: Model<BookWeekModel, {}>;
       BookMonth: Model<BookMonthModel, {}>;
       BookYear: Model<BookYearModel, {}>;
+      Budget: Model<BudgetModel, {}>;
+      BudgetTag: Model<BudgetTagModel, {}>;
     }
   }
 

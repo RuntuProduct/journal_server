@@ -9,6 +9,10 @@ export const DB = {
     allowNull: false,
     defaultValue: UUIDV4,
   },
+  year_id: {
+    type: UUID,
+    allowNull: false,
+  },
   total: {
     type: INTEGER,
     allowNull: false,
