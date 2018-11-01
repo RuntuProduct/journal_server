@@ -4,6 +4,7 @@ import { DefaultConfig } from './config/config.default';
 import UserController from './app/controller/user';
 import TaskController from './app/controller/task';
 import SummaryController from './app/controller/summary';
+import BudgetController from './app/controller/budget';
 
 // Model
 import UserModel from './app/model/user';
@@ -34,6 +35,7 @@ declare module 'egg' {
     user: UserController;
     task: TaskController;
     summary: SummaryController;
+    budget: BudgetController;
   }
 
   export interface Context {
