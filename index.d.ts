@@ -9,10 +9,10 @@ import BudgetController from './app/controller/budget';
 // Model
 import UserModel from './app/model/user';
 import TaskModel from './app/model/task';
-import BookDayModel from './app/model/bookDay';
-import BookWeekModel from './app/model/bookWeek';
-import BookMonthModel from './app/model/bookMonth';
-import BookYearModel from './app/model/bookYear';
+import RecordDayModel from './app/model/RecordDay';
+import RecordWeekModel from './app/model/recordWeek';
+import RecordMonthModel from './app/model/recordMonth';
+import RecordYearModel from './app/model/recordYear';
 import BudgetModel from './app/model/budget';
 import BudgetTagModel from './app/model/budgetTag';
 
@@ -20,9 +20,9 @@ import BudgetTagModel from './app/model/budgetTag';
 import UtilsService from './app/service/utils';
 import TaskService from './app/service/task';
 import SummaryService from './app/service/summary';
-import BookService from './app/service/book';
-import BookMonthService from './app/service/bookMonth';
-import BookYearService from './app/service/bookyear';
+import RecordService from './app/service/record';
+import RecordMonthService from './app/service/recordMonth';
+import RecordYearService from './app/service/recordyear';
 
 declare module 'egg' {
   export interface Application {
@@ -42,10 +42,10 @@ declare module 'egg' {
     model: {
       User: Model<UserModel, {}>;
       Task: Model<TaskModel, {}>;
-      BookDay: Model<BookDayModel, {}>;
-      BookWeek: Model<BookWeekModel, {}>;
-      BookMonth: Model<BookMonthModel, {}>;
-      BookYear: Model<BookYearModel, {}>;
+      RecordDay: Model<RecordDayModel, {}>;
+      RecordWeek: Model<RecordWeekModel, {}>;
+      RecordMonth: Model<RecordMonthModel, {}>;
+      RecordYear: Model<RecordYearModel, {}>;
       Budget: Model<BudgetModel, {}>;
       BudgetTag: Model<BudgetTagModel, {}>;
     }
@@ -55,9 +55,9 @@ declare module 'egg' {
     utils: UtilsService;
     task: TaskService;
     summary: SummaryService;
-    book: BookService;
-    bookMonth: BookMonthService;
-    bookYear: BookYearService;
+    record: RecordService;
+    recordMonth: RecordMonthService;
+    recordYear: RecordYearService;
   }
 }
 

@@ -2,10 +2,10 @@
 
 const USER = require('../definition/user')
 const TASK = require('../definition/task')
-const BOOK_YEAR = require('../definition/bookYear')
-const BOOK_MONTH = require('../definition/bookMonth')
-const BOOK_WEEK = require('../definition/bookWeek')
-const BOOK_DAY = require('../definition/bookDay')
+const RECORD_YEAR = require('../definition/recordYear')
+const RECORD_MONTH = require('../definition/recordMonth')
+const RECORD_WEEK = require('../definition/recordWeek')
+const RECORD_DAY = require('../definition/recordDay')
 const BUDGET = require('../definition/budget')
 const BUDGET_TAG = require('../definition/budgetTag')
 
@@ -20,10 +20,10 @@ module.exports = {
     */
     await queryInterface.createTable('user', USER.DB);
     await queryInterface.createTable('task', TASK.DB);
-    await queryInterface.createTable('book_year', BOOK_YEAR.DB);
-    await queryInterface.createTable('book_month', BOOK_MONTH.DB);
-    await queryInterface.createTable('book_week', BOOK_WEEK.DB);
-    await queryInterface.createTable('book_day', BOOK_DAY.DB);
+    await queryInterface.createTable('record_year', RECORD_YEAR.DB);
+    await queryInterface.createTable('record_month', RECORD_MONTH.DB);
+    await queryInterface.createTable('record_week', RECORD_WEEK.DB);
+    await queryInterface.createTable('record_day', RECORD_DAY.DB);
     await queryInterface.createTable('budget', BUDGET.DB);
     await queryInterface.createTable('budget_tag', BUDGET_TAG.DB);
     done();
@@ -39,10 +39,10 @@ module.exports = {
     */
     await queryInterface.dropTable('user');
     await queryInterface.dropTable('task');
-    await queryInterface.dropTable('book_year');
-    await queryInterface.dropTable('book_month');
-    await queryInterface.dropTable('book_week');
-    await queryInterface.dropTable('book_day');
+    await queryInterface.dropTable('record_year');
+    await queryInterface.dropTable('record_month');
+    await queryInterface.dropTable('record_week');
+    await queryInterface.dropTable('record_day');
     await queryInterface.dropTable('budget');
     await queryInterface.dropTable('budget_tag');
     done();

@@ -1,6 +1,6 @@
 import { Service } from 'egg';
 
-export default class BookMonthService extends Service {
+export default class RecordMonthService extends Service {
   /** 根据年Id获取月数组 */
   async getByYearId(yearId: number) {
     const userId = await this.ctx.service.utils.getUserId();
@@ -29,7 +29,7 @@ export default class BookMonthService extends Service {
 
   /** 根据动态条件获取单条月数据 */
   async getSingle(condition: any) {
-    const res = await this.ctx.model.BookMonth.findOrCreate(condition).spread((data: any) => {
+    const res = await this.ctx.model.RecordMonth.findOrCreate(condition).spread((data: any) => {
       return data.get();
     });
     return res;

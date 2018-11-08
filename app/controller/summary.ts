@@ -29,7 +29,7 @@ export default class SummaryController extends Controller {
       return;
     }
     // this.ctx.body = year
-    const bookYear = await this.ctx.service.summary.getYear(year);
-    this.ctx.body = bookYear;
+    const recordYear = await this.ctx.service.summary.getYear(year);
+    this.ctx.body = recordYear;
   }
 }

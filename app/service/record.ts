@@ -1,7 +1,7 @@
 import { Service } from 'egg';
 import { Moment } from 'moment';
 
-export default class BookService extends Service {
+export default class RecordService extends Service {
   /**
    * 初始化今日数据
    *
@@ -17,7 +17,7 @@ export default class BookService extends Service {
 
     // init year data
     const yearValue = day.year();
-    const yearData = await this.ctx.model.BookYear.findOrCreate({
+    const yearData = await this.ctx.model.RecordYear.findOrCreate({
       where: { year: yearValue, user_id: userId },
     }).spread((v) => v);
     // init year budget
@@ -29,20 +29,20 @@ export default class BookService extends Service {
 
     // init month data
     const monthValue = day.month() + 1;
-    const monthData = await this.ctx.model.BookMonth.findOrCreate({
+    const monthData = await this.ctx.model.RecordMonth.findOrCreate({
       where: { month: monthValue, user_id: userId, year_id: yearId },
     }).spread((v) => v);
 
     // init week data
     const weekValue = day.format();
-    const weekData = await this.ctx.model.BookWeek.findOrCreate({
+    const weekData = await this.ctx.model.RecordWeek.findOrCreate({
       where: { day: weekValue, user_id: userId, year_id: yearId },
     }).spread((v) => v);
 
     // init day data
     const dayValue = day.format();
     const monthId = monthData.id;
-    const dayData = await this.ctx.model.BookDay.findOrCreate({
+    const dayData = await this.ctx.model.RecordDay.findOrCreate({
       where: { day: dayValue, user_id: userId, year_id: yearId, month_id: monthId },
     }).spread((v) => v);
 

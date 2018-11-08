@@ -38,7 +38,7 @@ export default class TaskService extends Service {
       monthData,
       weekData,
       dayData,
-    } = await this.ctx.service.book.initToday(dayObj);
+    } = await this.ctx.service.record.initToday(dayObj);
     const userId = await this.ctx.service.utils.getUserId();
     const taskObj = {
       title,
