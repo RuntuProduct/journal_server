@@ -19,5 +19,5 @@ export default (app: Application) => {
   router.post(`${baseURL}/budget/income`, controller.budget.setIncome); // 设置年预算
 
   // 汇总相关
-  router.get(`${baseURL}/summary/year`, controller.summary.year); // 获取年汇总
+  router.get(`${baseURL}/summary/today`, controller.summary.getToday); // 获取年汇总
 };

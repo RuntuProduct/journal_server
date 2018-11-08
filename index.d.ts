@@ -21,8 +21,8 @@ import UtilsService from './app/service/utils';
 import TaskService from './app/service/task';
 import SummaryService from './app/service/summary';
 import RecordService from './app/service/record';
+import RecordYearService from './app/service/recordYear';
 import RecordMonthService from './app/service/recordMonth';
-import RecordYearService from './app/service/recordyear';
 
 declare module 'egg' {
   export interface Application {
@@ -56,8 +56,8 @@ declare module 'egg' {
     task: TaskService;
     summary: SummaryService;
     record: RecordService;
-    recordMonth: RecordMonthService;
     recordYear: RecordYearService;
+    recordMonth: RecordMonthService;
   }
 }
 

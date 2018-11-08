@@ -8,6 +8,8 @@ export default class RecordYearService extends Service {
   /** 获取某年数据 */
   async getSingle(year: number) {
     const userId = await this.service.utils.getUserId();
+    await this.ctx.service.utils.validateYear(year);
+    // get year record
     const target = await this.ctx.model.RecordYear.findOrCreate({
       where: {
         user_id: userId,
@@ -16,6 +18,18 @@ export default class RecordYearService extends Service {
     }).spread((data: any) => {
       return data.get();
     });
-    return target;
+
+    // get year's task
+    const taskList = await this.ctx.model.Task.findAll({
+      where: {
+        user_id: userId,
+        t_type: 'year',
+        target_id: target.id,
+      },
+    });
+    return {
+      ...target,
+      taskList,
+    };
   }
 }
