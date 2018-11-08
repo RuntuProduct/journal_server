@@ -23,6 +23,8 @@ import SummaryService from './app/service/summary';
 import RecordService from './app/service/record';
 import RecordYearService from './app/service/recordYear';
 import RecordMonthService from './app/service/recordMonth';
+import RecordWeekService from './app/service/recordWeek';
+import RecordDayService from './app/service/recordDay';
 
 declare module 'egg' {
   export interface Application {
@@ -58,6 +60,8 @@ declare module 'egg' {
     record: RecordService;
     recordYear: RecordYearService;
     recordMonth: RecordMonthService;
+    recordWeek: RecordWeekService;
+    recordDay: RecordDayService;
   }
 }
 

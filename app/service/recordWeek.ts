@@ -1,19 +1,18 @@
 import { Service } from 'egg';
 
-export default class RecordMonthService extends Service {
+export default class RecordService extends Service {
 
-  /** 获取某月数据 */
+  /** 获取某周数据 */
   async getSingle(
-    month: number,
+    day: string,
     yearId: string,
   ) {
     const userId = await this.service.utils.getUserId();
-    await this.ctx.service.utils.validateMonth(month);
 
-    // get month record
-    const target = await this.ctx.model.RecordMonth.findOrCreate({
+    // get week record
+    const target = await this.ctx.model.RecordWeek.findOrCreate({
       where: {
-        month,
+        day,
         user_id: userId,
         year_id: yearId,
       },
@@ -21,11 +20,11 @@ export default class RecordMonthService extends Service {
       return data.get();
     });
 
-    // get month task
+    // get week task
     const taskList = await this.ctx.model.Task.findAll({
       where: {
         user_id: userId,
-        t_type: 'month',
+        t_type: 'week',
         target_id: target.id,
       },
     });

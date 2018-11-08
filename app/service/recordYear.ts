@@ -19,6 +19,11 @@ export default class RecordYearService extends Service {
       return data.get();
     });
 
+    // get budget
+    const budget = await this.ctx.model.Budget.findOrCreate({
+      where: { year_id: target.id },
+    }).spread((data: any) => data.get());
+
     // get year's task
     const taskList = await this.ctx.model.Task.findAll({
       where: {
@@ -27,8 +32,10 @@ export default class RecordYearService extends Service {
         target_id: target.id,
       },
     });
+
     return {
       ...target,
+      budget,
       taskList,
     };
   }
