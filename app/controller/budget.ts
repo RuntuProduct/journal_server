@@ -24,4 +24,19 @@ export default class BudgetController extends Controller {
     });
     this.ctx.body = 'update success';
   }
+
+  /** budget test calculation */
+  async testCalculation() {
+    const { value, type } = this.ctx.request.query;
+    // get total value of year
+    const realValue = parseInt(value, 10);
+    const total = await this.service.budget.calculatedByType(type, realValue);
+    const func = this.service.budget.calculatedByYear;
+    this.ctx.body = {
+      year: await func(total, 'year'),
+      month: await func(total, 'month'),
+      week: await func(total, 'week'),
+      day: await func(total, 'day'),
+    };
+  }
 }

@@ -20,18 +20,21 @@ export default class RecordService extends Service {
       return data.get();
     });
 
-    // get week task
-    const taskList = await this.ctx.model.Task.findAll({
-      where: {
-        user_id: userId,
-        t_type: 'week',
-        target_id: target.id,
-      },
-    });
-
-    return {
-      ...target,
-      taskList,
-    };
+    if (target) {
+      // get week task
+      const taskList = await this.ctx.model.Task.findAll({
+        where: {
+          user_id: userId,
+          t_type: 'week',
+          target_id: target.id,
+        },
+      });
+      return {
+        ...target,
+        taskList,
+      };
+    } else {
+      return null;
+    }
   }
 }

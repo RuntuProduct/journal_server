@@ -11,15 +11,25 @@ export default class SummaryController extends Controller {
 
     // get today record data
     const yearData = await this.service.recordYear.getSingle(year);
-    const monthData = await this.service.recordMonth.getSingle(month, yearData.id);
-    const weekData = await this.service.recordWeek.getSingle(day, yearData.id);
-    const dayData = await this.service.recordDay.getSingle(day, yearData.id, monthData.id);
 
-    this.ctx.body = {
-      yearData,
-      monthData,
-      weekData,
-      dayData,
-    };
+    if (yearData) {
+      const monthData = await this.service.recordMonth.getSingle(month, yearData.id);
+      const weekData = await this.service.recordWeek.getSingle(day, yearData.id);
+      const dayData = await this.service.recordDay.getSingle(day, yearData.id, monthData.id);
+
+      this.ctx.body = {
+        yearData,
+        monthData,
+        weekData,
+        dayData,
+      };
+    } else {
+      this.ctx.body = {
+        yearData,
+        monthData: null,
+        weekData: null,
+        dayData: null,
+      };
+    }
   }
 }

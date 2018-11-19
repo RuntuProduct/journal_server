@@ -15,14 +15,17 @@ export default class RecordDay extends Service {
       where: { day, user_id: userId, year_id: yearId, month_id: monthId },
     }).spread((data: any) => data.get());
 
-    // get day task
-    const taskList = await this.ctx.model.Task.findAll({
-      where: { user_id: userId, t_type: 'month', target_id: target.id },
-    });
-
-    return {
-      ...target,
-      taskList,
-    };
+    if (target) {
+      // get day task
+      const taskList = await this.ctx.model.Task.findAll({
+        where: { user_id: userId, t_type: 'month', target_id: target.id },
+      });
+      return {
+        ...target,
+        taskList,
+      };
+    } else {
+      return null;
+    }
   }
 }

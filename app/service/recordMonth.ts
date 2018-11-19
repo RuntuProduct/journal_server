@@ -11,28 +11,30 @@ export default class RecordMonthService extends Service {
     await this.ctx.service.utils.validateMonth(month);
 
     // get month record
-    const target = await this.ctx.model.RecordMonth.findOrCreate({
+    const target = await this.ctx.model.RecordMonth.find({
       where: {
         month,
         user_id: userId,
         year_id: yearId,
       },
-    }).spread((data: any) => {
-      return data.get();
     });
 
-    // get month task
-    const taskList = await this.ctx.model.Task.findAll({
-      where: {
-        user_id: userId,
-        t_type: 'month',
-        target_id: target.id,
-      },
-    });
+    if (target) {
+      // get month task
+      const taskList = await this.ctx.model.Task.findAll({
+        where: {
+          user_id: userId,
+          t_type: 'month',
+          target_id: target.id,
+        },
+      });
+      return {
+        ...target,
+        taskList,
+      };
+    } else {
+      return null;
+    }
 
-    return {
-      ...target,
-      taskList,
-    };
   }
 }
